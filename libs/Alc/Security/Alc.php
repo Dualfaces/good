@@ -9,14 +9,14 @@ class Alc extends Permission
 	
 	public function __construct() {
 		//roles
-		$this->addRole('Host');
-		$this->addRole('Uživatel', 'Host');
+		$this->addRole('Uživatel');
 		$this->addRole('Správce projektu', 'Uživatel');
 		$this->addRole('Redaktor', 'Uživatel');
 		$this->addRole('Administrator');
 		
 		//resources
 		$this->addResource('Sign:In');
+		$this->addResource('Admin:Default');
 		$this->addResource('Front:Homepage:Default');
 		
 		//privileges

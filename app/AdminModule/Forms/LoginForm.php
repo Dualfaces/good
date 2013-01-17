@@ -27,7 +27,8 @@ class LoginForm extends Form
 	public function formSubmited($form) {
 		try{
 			$user = $this->presenter->user;
-			$user->login($form->username, $form->password);
+			$values = $form->getValues();
+			$user->login($values->username, $values->password);
 			
 			$this->presenter->application->restoreRequest($this->presenter->backlink);
 			$this->presenter->redirect('Default:default');
