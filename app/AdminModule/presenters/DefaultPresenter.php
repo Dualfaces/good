@@ -19,14 +19,14 @@ final class DefaultPresenter extends BasePresenter
 			}
 			
 			$backlink = $this->getApplication()->storeRequest();
-			$this->redirect('Admin:login', array('backlink' => $backlink));			
+			$this->redirect('Index:login', array('backlink' => $backlink));			
 		}
 		else
 		{
 			if(!$this->user->isAllowed($this->name, $this->action))
 			{
 				$this->flashMessage('Vstup zakázán. Nemáte práva prohlížet obsah této stránky.', 'warning');
-				$this->redirect('Admin:login');
+				$this->redirect('Index:login');
 			}
 		}
 		
@@ -34,7 +34,7 @@ final class DefaultPresenter extends BasePresenter
 	public function actionLogout()
     {
         $this->user->logOut();
-        $this->redirect('Admin:login');
+        $this->redirect('Index:login');
     }
 		
 }

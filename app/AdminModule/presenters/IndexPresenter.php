@@ -4,7 +4,7 @@ namespace AdminModule;
 
 use AdminModule\Forms\LoginForm;
 
-final class AdminPresenter extends BasePresenter
+final class IndexPresenter extends BasePresenter
 {
 	 
 	/** @persistent */
