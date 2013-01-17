@@ -1,0 +1,6 @@
+{block content}
+{foreach $user->getRoles() as $role}
+{? dump($role);}
+{? dump($user->getRoles());}
+{/foreach}
+{/block}
