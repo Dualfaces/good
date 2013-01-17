@@ -9,12 +9,10 @@ use Nette\Security\AuthenticationException;
 class LoginForm extends Form
 {
 	
-	public function __construct($parent, $name) {
-		
-		parent::__contruct($parent,$name);
+	public function __construct() {
 		
 		$this->addProtection('Čas vypršel. Odešlete formulář znovu');
-		
+
 		$this->addText('username', 'Uživatelské jméno: ')
 				->addRule(Form::FILLED, 'Vložte vaše uživatelské jméno')
 				->addRule(Form::EMAIL, 'Zadaný email neni ve správném tvaru');
@@ -23,7 +21,7 @@ class LoginForm extends Form
 				->addRule(Form::FILLED, 'Vložte heslo');
 		$this->addSubmit('send', 'Přihlásit');
 		$this->onSubmit[] = array($this, 'formSubmited');
-		dump('sdad');
+		
 	}
 	
 	public function formSubmited($form) {
