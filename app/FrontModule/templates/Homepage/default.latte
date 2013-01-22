@@ -1,4 +1,13 @@
+{block title}
+	{$title}
+{/block}
 {block content}
+<h1>{$title}</h1>
+{if !$user->isLoggedIn()}
+<a n:href=":Admin:Default:default">Přihlásit se.</a>
+{/if}
+<a n:href="Secure:default">Pouze pro přihlášené.</a>
+<a n:href="UserList:default">User List</a>
 {foreach $user->getRoles() as $role}
 {? dump($role);}
 {? dump($user->getRoles());}

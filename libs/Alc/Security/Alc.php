@@ -17,11 +17,13 @@ class Alc extends Permission
 		//resources
 		$this->addResource('Sign:In');
 		$this->addResource('Admin:Default');
-		$this->addResource('Front:Homepage:Default');
+		$this->addResource('Front:Homepage:default');
+		$this->addResource('Front:Secure:default');
 		
 		//privileges
-
-		$this->allow('Uživatel', 'Front:Homepage:Default', Permission::ALL);
+		$this->deny(self::ALL, self::ALL, self::ALL);
+		$this->allow('guest', 'Front:Homepage:default', Permission::DENY);
+		$this->allow('Uživatel', 'Front:Homepage:default', Permission::ALL);
 		$this->allow('Administrator', Permission::ALL, Permission::ALL);
 	}
 	
