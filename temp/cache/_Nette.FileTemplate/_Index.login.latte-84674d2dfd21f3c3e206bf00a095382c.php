@@ -1,17 +1,23 @@
-<?php //netteCache[01]000408a:2:{s:4:"time";s:21:"0.32329200 1358419580";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:86:"/Applications/XAMPP/xamppfiles/htdocs/good/app/AdminModule/templates/Index/login.latte";i:2;i:1358410749;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"b7f6732 released on 2013-01-01";}}}?><?php
+<?php //netteCache[01]000408a:2:{s:4:"time";s:21:"0.47510800 1358952159";s:9:"callbacks";a:2:{i:0;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:9:"checkFile";}i:1;s:86:"/Applications/XAMPP/xamppfiles/htdocs/good/app/AdminModule/templates/Index/login.latte";i:2;i:1358951708;}i:1;a:3:{i:0;a:2:{i:0;s:19:"Nette\Caching\Cache";i:1;s:10:"checkConst";}i:1;s:25:"Nette\Framework::REVISION";i:2;s:30:"b7f6732 released on 2013-01-01";}}}?><?php
 
 // source file: /Applications/XAMPP/xamppfiles/htdocs/good/app/AdminModule/templates/Index/login.latte
 
 ?><?php
 // prolog Nette\Latte\Macros\CoreMacros
-list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'vevlufy5r8')
+list($_l, $_g) = Nette\Latte\Macros\CoreMacros::initRuntime($template, 'od369nffnk')
 ;
 // prolog Nette\Latte\Macros\UIMacros
 //
-// block title
+// block content
 //
-if (!function_exists($_l->blocks['title'][] = '_lb49cba78cb9_title')) { function _lb49cba78cb9_title($_l, $_args) { extract($_args)
-?>nette-acl<?php
+if (!function_exists($_l->blocks['content'][] = '_lb43b80db9f6_content')) { function _lb43b80db9f6_content($_l, $_args) { extract($_args)
+;$iterations = 0; foreach ($flashes as $flash): ?>
+		<div class="<?php echo htmlSpecialChars($flash->type) ?>"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
+<?php $iterations++; endforeach ?>
+	<div id="loginForm">
+<?php $_ctrl = $_control->getComponent("loginForm"); if ($_ctrl instanceof Nette\Application\UI\IRenderable) $_ctrl->validateControl(); $_ctrl->render() ?>
+	</div>
+<?php
 }}
 
 //
@@ -33,24 +39,5 @@ if ($_l->extends) {
 //
 // main template
 //
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<?php if (isset($robots)): ?>	<meta name="robots" content="<?php echo htmlSpecialChars($robots) ?>" />
-<?php endif ?>
-	<title><?php if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
-call_user_func(reset($_l->blocks['title']), $_l, get_defined_vars())  ?></title>
-	<link rel="stylesheet" href="<?php echo htmlSpecialChars($basePath) ?>/css/admin.css" type="text/css" media="screen, projection, tv" />
-</head>
-<body>
-
-	<div id="content" class="noborder">
-<?php $iterations = 0; foreach ($flashes as $flash): ?>		<div class="flash <?php echo htmlSpecialChars($flash->type) ?>
-"><?php echo Nette\Templating\Helpers::escapeHtml($flash->message, ENT_NOQUOTES) ?></div>
-<?php $iterations++; endforeach ;Nette\Latte\Macros\UIMacros::callBlock($_l, 'content', $template->getParameters()) ?>
-	</div><!-- #content -->
-
-</body>
-</html>
+if ($_l->extends) { ob_end_clean(); return Nette\Latte\Macros\CoreMacros::includeTemplate($_l->extends, get_defined_vars(), $template)->render(); }
+call_user_func(reset($_l->blocks['content']), $_l, get_defined_vars()) ; 

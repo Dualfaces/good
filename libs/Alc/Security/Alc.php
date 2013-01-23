@@ -22,7 +22,6 @@ class Alc extends Permission
 		
 		//privileges
 		$this->deny(self::ALL, self::ALL, self::ALL);
-		$this->allow('guest', 'Front:Homepage:default', Permission::DENY);
 		$this->allow('Uživatel', 'Front:Homepage:default', Permission::ALL);
 		$this->allow('Administrator', Permission::ALL, Permission::ALL);
 	}

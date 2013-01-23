@@ -1,13 +1,18 @@
-{block #title}Login :: {include #parent}{/block}
-{if $user->isLoggedIn()}
-	<a n:href="logout!">Odhlásit</a>
-	<a n:href="createUser!">Nový uživatel</a>
-{/if}
-{block #content}
-	{foreach $flashes as $flash}
-		<div class="{$flash->type}">{$flash->message}</div>
-	{/foreach}
-	<div id="loginForm">
-		{control loginForm}
-	</div>
-{/block}
+
+		<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+	<title>{block #title}nette-acl{/block}</title>
+	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/bootstrap.css">
+</head>
+<body>
+
+	<div id="content" class="noborder">
+		<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+		{include #content}
+	</div><!-- #content -->
+
+</body>
+</html>
