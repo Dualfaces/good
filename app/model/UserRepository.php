@@ -22,8 +22,8 @@ class UserRepository extends Repositary
 		$this->findById($id)->delete();
 	}
 	
-	public function updateUser($id, $username = NULL, $password = NULL, $email = NULL, $last_name = NULL, $first_name = NULL, $about = NULL, $rights = NULL) {
-		$user = $this->findById($id);
+	public function updateUser($id, $username = NULL, $password = NULL, $email = NULL, $last_name = NULL, $first_name = NULL, $about = NULL, $rights_id = NULL) {
+		$user = $this->findById($id)->fetch();
 		if($first_name == NULL){
 			$first_name = $user->first_name;
 		}
@@ -42,8 +42,8 @@ class UserRepository extends Repositary
 		if($password == NULL){
 			$password = $user->password;
 		}
-		if($rights == NULL){
-			$rights = $user->rights;
+		if($rights_id == NULL){
+			$rights_id = $user->rights->id;
 		}
 		if($email == NULL){
 			$email = $user->email;
@@ -56,7 +56,7 @@ class UserRepository extends Repositary
 			'first_name' => $first_name,
 			'email' => $email,
 			'about' => $about,
-			'rights' => $rights
+			'rights_id' => $rights_id
 		));
 	}
 }

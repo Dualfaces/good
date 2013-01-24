@@ -4,7 +4,8 @@
 		<tr><th>Uživatelské jméno</th><th>Práva</th><th>Celé jméno</th><th></th></tr>
 		{foreach $users as $user}
 		{? $id = $user->id;}
-			<tr><td>{$user->username}</td><td>{$user->rights}</td><td>{$user->first_name} {$user->last_name}</td><td><a n:href="User:edit $id">Upravit</a></td></tr>
+			<tr><td>{$user->username}</td><td>
+{$user->rights->name}</td><td>{$user->first_name} {$user->last_name}</td><td><a n:href="User:edit $id">Upravit</a></td></tr>
 		{/foreach}
 	</table>
 {/block}

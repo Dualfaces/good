@@ -1,1 +1,1 @@
-<?php //netteCache[01]000070a:2:{s:4:"time";s:21:"0.16865700 1358422178";s:10:"serialized";b:1;}?>a:1:{s:7:"primary";a:2:{s:4:"user";s:2:"id";s:6:"rights";s:2:"id";}}
+<?php //netteCache[01]000070a:2:{s:4:"time";s:21:"0.00998500 1359020271";s:10:"serialized";b:1;}?>a:3:{s:7:"primary";a:2:{s:4:"user";s:2:"id";s:6:"rights";s:2:"id";}s:9:"belongsTo";a:1:{s:4:"user";a:1:{s:9:"rights_id";s:6:"rights";}}s:7:"hasMany";a:1:{s:6:"rights";a:1:{s:13:"rights_iduser";a:2:{i:0;s:9:"rights_id";i:1;s:4:"user";}}}}
